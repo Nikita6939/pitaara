@@ -1,0 +1,211 @@
+/* Pitaara Admin Panel Custom Styles */
+
+/* Main layout */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    margin: 2px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .nav-link:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link.active {
+    background-color: #9B87F5;
+    color: white;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.sidebar-header h3 {
+    font-weight: 600;
+}
+
+/* Cards, tables and other UI elements */
+.card {
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.card-header {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+
+.table th {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.badge {
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+/* Forms and modals */
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.form-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-control, .form-select {
+    border-radius: 6px;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+    border-color: #dee2e6;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #9B87F5;
+    box-shadow: 0 0 0 0.25rem rgba(155, 135, 245, 0.25);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 6px;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+}
+
+.btn-group .btn {
+    border-radius: 4px;
+}
+
+.btn-purple {
+    background-color: #3f2b97;
+    border-color: #3f2b97;
+    color: white;
+}
+
+.btn-purple:hover {
+    background-color: #7E69AB;
+    border-color: #7E69AB;
+    color: white;
+}
+
+.btn-outline-purple {
+    color: #3f2b97;
+    border-color: #3f2b97;
+}
+
+.btn-outline-purple:hover {
+    background-color: #E5DEFF;
+    color: #7E69AB;
+    border-color: #9B87F5;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+    .sidebar {
+        height: auto;
+        position: relative;
+    }
+    
+    .sidebar-footer {
+        position: relative;
+    }
+}
+
+/* Shadows */
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+}
+
+/* Tab navigation */
+.nav-tabs .nav-link {
+    color: #495057;
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+    color: #9B87F5;
+    font-weight: 600;
+    border-bottom-color: #9B87F5;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: 2px;
+    background-color: transparent;
+}
+
+/* Background colors */
+.bg-purple-default, .bg-purple {
+    background-color: #9B87F5 !important;
+}
+
+.bg-purple-light {
+    background-color: #E5DEFF !important;
+}
+
+.bg-peach {
+    background-color: #FFBD99 !important;
+}
+
+.bg-peach-light {
+    background-color: #FDE1D3 !important;
+}
+
+/* Quick actions */
+.btn-outline-purple, .btn-outline-peach {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 500;
+}
+
+/* Media grid */
+.hover-shadow:hover {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+    transform: translateY(-3px);
+}
+
+/* Settings tabs */
+#nav-tabContent {
+    background-color: white;
+}
+
+/* Theme Colors */
+.text-purple {
+    color: #9B87F5 !important;
+}
+
+.text-peach {
+    color: #FFBD99 !important;
+}
+
+/* Form validation */
+.was-validated .form-control:invalid, .form-control.is-invalid {
+    border-color: #dc3545;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}

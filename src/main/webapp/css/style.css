@@ -1,0 +1,146 @@
+/* Custom CSS for Pitaara Artist Directory */
+
+/* Typography */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Colors */
+.text-purple {
+    color: #9B87F5;
+}
+
+.text-purple-dark {
+    color: #7E69AB;
+}
+
+.text-peach {
+    color: #FFBD99;
+}
+
+.bg-purple {
+    background-color: #9B87F5 !important;
+}
+
+.bg-purple-light {
+    background-color: #E5DEFF !important;
+}
+
+.bg-peach {
+    background-color: #FFBD99 !important;
+}
+
+.bg-peach-light {
+    background-color: #FDE1D3 !important;
+}
+
+.border-purple {
+    border-color: #9B87F5 !important;
+}
+
+.border-peach {
+    border-color: #FFBD99 !important;
+}
+
+/* Buttons */
+.btn-purple {
+    background-color: #3f2b97;
+    color: white;
+    border-color: #3f2b97;
+   
+}
+
+.btn-purple:hover {
+    background-color: #7E69AB;
+    color: white;
+    border-color: #7E69AB;
+}
+
+.btn-outline-purple {
+    color: #9B87F5;
+    border-color: #9B87F5;
+}
+
+.btn-outline-purple:hover {
+    background-color: #E5DEFF;
+    color: #7E69AB;
+    border-color: #9B87F5;
+}
+
+.btn-peach {
+    background-color: #FFBD99;
+    color: white;
+    border-color: #FFBD99;
+}
+
+.btn-peach:hover {
+    background-color: #FF9A70;
+    color: white;
+    border-color: #FF9A70;
+}
+
+.btn-outline-peach {
+    color: #FFBD99;
+    border-color: #FFBD99;
+}
+
+.btn-outline-peach:hover {
+    background-color: #FDE1D3;
+    color: #FF9A70;
+    border-color: #FFBD99;
+}
+
+/* Banner / Search Section */
+.banner-section {
+    background: linear-gradient(to right, #FDE1D3, #E5DEFF);
+    padding: 60px 0;
+    height: 550px;
+}
+
+/* Card Hover Effect */
+.hover-shadow {
+    transition: all 0.3s ease;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Music Section */
+.music-section {
+    background: linear-gradient(to right, #E5DEFF, white, #FDE1D3);
+}
+
+.active-track {
+    background-color: #E5DEFF;
+}
+
+/* Footer Links */
+.hover-peach:hover {
+    color: #FFBD99 !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9B87F5;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7E69AB;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-section {
+        padding: 40px 0;
+    }
+}

@@ -41,7 +41,12 @@ public class pitaaraCtrl {
                 "api_secret", apiSecret
         ));
     }
-
+  @RequestMapping("/")
+    public String index(HttpSession session) {
+        List<Artist> list = (List<Artist>) aR.findAll();
+        session.setAttribute("show1", list);
+        return "index.html";
+    }
     // ======== INDEX ========
     @RequestMapping("/index")
     public String index(HttpSession session) {

@@ -42,7 +42,7 @@ public class pitaaraCtrl {
         ));
     }
   @RequestMapping("/")
-    public String index(HttpSession session) {
+    public String home(HttpSession session) {
        System.out.println("/");
         return "index.html";
     }

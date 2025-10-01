@@ -41,11 +41,7 @@ public class pitaaraCtrl {
                 "api_secret", apiSecret
         ));
     }
-  @RequestMapping("/")
-    public String home(HttpSession session) {
-       System.out.println("/");
-        return "index.html";
-    }
+ 
     // ======== INDEX ========
     @RequestMapping("/index")
     public String index(HttpSession session) {

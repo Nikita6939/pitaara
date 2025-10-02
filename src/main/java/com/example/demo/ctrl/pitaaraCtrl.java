@@ -46,7 +46,7 @@ public class pitaaraCtrl {
     @RequestMapping("/index")
     public String index(HttpSession session) {
         List<Artist> list = (List<Artist>) aR.findAll();
-        System.out.println("in home");
+      
         session.setAttribute("show1", list);
         return "index";
     }

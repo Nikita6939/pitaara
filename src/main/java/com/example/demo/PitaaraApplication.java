@@ -10,9 +10,6 @@ public class PitaaraApplication extends SpringBootServletInitializer {
         SpringApplication.run(PitaaraApplication.class, args);
     }
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(PitaaraApplication.class);
-    }
+   
 }
 

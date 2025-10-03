@@ -45,18 +45,27 @@ public class pitaaraCtrl {
     // ======== INDEX ========
     @RequestMapping("/index")
     public String index(HttpSession session) {
+
+        if(session.getAttribute("loginset")!=null){
         List<Artist> list = (List<Artist>) aR.findAll();
       
         session.setAttribute("show1", list);
         return "index";
+        }else{
+            return "login";
+        }
     }
 
     // ======== ADMIN DASHBOARD ========
     @RequestMapping("/admindashboard")
     public String admindashboard(HttpSession session) {
+          if(session.getAttribute("loginset")!=null){
         List<Artist> list = (List<Artist>) aR.findAll();
         session.setAttribute("show", list);
         return "admindashboard";
+          }else{
+            return "login";
+        }
     }
 
     // ======== USER REGISTRATION ========
@@ -88,20 +97,25 @@ public class pitaaraCtrl {
 
     @PostMapping("/login")
     public String user_login(User u, HttpSession session) {
-        for (User u1 : uR.findAll()) {
-            if (u1.getUserName().equals(u.getUserName()) && u1.getPassword().equals(u.getPassword())) {
-                session.setAttribute("loginName", u1);
+          String email="adityathosar93@gmail.com";
+          String password="Pitaara#93";
+            if (email.equals(u.getUserName()) && password.equals(u.getPassword())) {
+                session.setAttribute("loginset", "Login");
                 return "index";
             }
-        }
+        
         session.setAttribute("Login-failed", "Login Failed!...");
         return "login";
     }
 
     // ======== ADD ARTIST ========
     @GetMapping("/addArtist")
-    public String addArtist() {
+    public String addArtist(HttpSession session) {
+        if(session.setAttribute("loginset")!=null){
         return "addArtist";
+        }else{
+            return "login";
+        }
     }
 
     @PostMapping("/saveArtist")

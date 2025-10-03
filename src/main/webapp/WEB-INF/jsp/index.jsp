@@ -513,8 +513,9 @@
 						<div class="row">
 							<div class="col-md-6 text-center text-md-start">
 								<p class="text-white-50 small mb-md-0">
-									&copy; <span id="current-year">2023</span> Pitaara. All rights
-									reserved.
+									&copy; <span id="current-year">© Pitaara 2025 | Made with
+ Do IT Infosystems
+									
 								</p>
 							</div>
 							<div class="col-md-6 text-center text-md-end">

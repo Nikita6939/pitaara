@@ -81,6 +81,7 @@
                         <button class="btn btn-link text-dark p-1 me-2">
                             <i class="bi bi-search"></i>
                         </button>
+
                         <button class="btn btn-outline-purple d-flex align-items-center">
                             <i class="bi bi-person me-2"></i>
                             <span>Login</span>
@@ -98,6 +99,7 @@
 				<div class="small text-secondary">
 					Logged In: <span class="fw-medium"><%=u.getFirstName()%></span>
 				</div>
+                
 			</div>
 		</div>
 		<%}%>
@@ -242,6 +244,11 @@
 								<a href="premiumMember"
 									class="btn btn-purple w-100 d-flex align-items-center justify-content-center">
 									 <span>Premium Member</span>
+								</a>
+
+								<a href="addArtist"
+									class="btn btn-purple w-100 d-flex align-items-center justify-content-center">
+									 <span>Add Artist</span>
 								</a>
 							</div>
 			

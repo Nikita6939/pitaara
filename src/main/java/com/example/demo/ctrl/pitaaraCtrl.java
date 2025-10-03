@@ -46,7 +46,8 @@ public class pitaaraCtrl {
     @RequestMapping("/index")
     public String index(HttpSession session) {
 
-        if(session.getAttribute("loginset")!=null){
+        String loginset = (String) session.getAttribute("loginset");
+        if(loginset!=null){
         List<Artist> list = (List<Artist>) aR.findAll();
       
         session.setAttribute("show1", list);
@@ -59,7 +60,8 @@ public class pitaaraCtrl {
     // ======== ADMIN DASHBOARD ========
     @RequestMapping("/admindashboard")
     public String admindashboard(HttpSession session) {
-          if(session.getAttribute("loginset")!=null){
+           String loginset = (String) session.getAttribute("loginset");
+        if(loginset!=null){
         List<Artist> list = (List<Artist>) aR.findAll();
         session.setAttribute("show", list);
         return "admindashboard";
@@ -111,7 +113,8 @@ public class pitaaraCtrl {
     // ======== ADD ARTIST ========
     @GetMapping("/addArtist")
     public String addArtist(HttpSession session) {
-        if(session.setAttribute("loginset")!=null){
+        String loginset = (String) session.getAttribute("loginset");
+        if(loginset!=null){
         return "addArtist";
         }else{
             return "login";

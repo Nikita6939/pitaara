@@ -53,7 +53,7 @@ public class pitaaraCtrl {
         session.setAttribute("show1", list);
         return "index";
         }else{
-            return "login";
+            return "redirect:login";
         }
     }
 
@@ -66,30 +66,13 @@ public class pitaaraCtrl {
         session.setAttribute("show", list);
         return "admindashboard";
           }else{
-            return "login";
+            return "redirect:login";
         }
     }
 
     // ======== USER REGISTRATION ========
-    @GetMapping("/register")
-    public String register() {
-        return "register";
-    }
-
-    @PostMapping("/register")
-    public String user_register(User u, HttpSession session) {
-        if (u.getPassword().equals(u.getConfirmPassword())) {
-            try {
-                uR.save(u);
-                session.setAttribute("register-success", "Registration Successfully!...");
-            } catch (Exception e) {
-                session.setAttribute("email-exist", "Email Already Exist!...");
-            }
-        } else {
-            session.setAttribute("password-match", "Please Check password and confirm password!...");
-        }
-        return "register";
-    }
+   
+   
 
     // ======== USER LOGIN ========
     @GetMapping("/login")
@@ -117,7 +100,7 @@ public class pitaaraCtrl {
         if(loginset!=null){
         return "addArtist";
         }else{
-            return "login";
+            return "redirect:login";
         }
     }
 
@@ -133,7 +116,7 @@ public class pitaaraCtrl {
         a.setMorePhoto(uploadMultipleToCloudinary(moreFiles));
 
         aR.save(a);
-        return "addArtist";
+        return "redirect:admindashboard";
     }
 
     // ======== UPDATE ARTIST ========
@@ -199,7 +182,7 @@ public class pitaaraCtrl {
     @RequestMapping("/deleteArtist")
     public String deleteArtist(int id) {
         aR.findById(id).ifPresent(aR::delete);
-        return "admindashboard";
+        return "redirect:admindashboard";
     }
 
     // ======== SEARCH ARTIST ========

@@ -103,7 +103,7 @@ public class pitaaraCtrl {
           String password="Pitaara#93";
             if (email.equals(u.getUserName()) && password.equals(u.getPassword())) {
                 session.setAttribute("loginset", "Login");
-                return "index";
+                return "redirect:index";
             }
         
         session.setAttribute("Login-failed", "Login Failed!...");

@@ -110,10 +110,7 @@
                     </div>
                 </form>
             </div>
-            <div class="auth-footer">
-                <p class="mb-1">Don't have an account? <a href="register" class="text-purple" style="color:#3f2b97">Register</a></p>
-                <p class="mb-0"><a href="forgotPassword" class="text-muted">Forgot Password?</a></p>
-            </div>
+            
         </div>
     </div>
 

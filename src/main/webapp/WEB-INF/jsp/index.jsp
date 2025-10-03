@@ -246,7 +246,7 @@
 									 <span>Premium Member</span>
 								</a>
 
-								<a href="addArtist"
+								<a href="addArtist" style="margin-top:10px"
 									class="btn btn-purple w-100 d-flex align-items-center justify-content-center">
 									 <span>Add Artist</span>
 								</a>

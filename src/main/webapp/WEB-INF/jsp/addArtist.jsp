@@ -446,6 +446,8 @@
 					</div>
 				</div>
 			</div>
+        <p>© Pitaara  Books 2025 | Made with
+ Do IT Infosystems</p>
 		</div>
 	</div>
 </body>

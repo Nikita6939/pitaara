@@ -34,7 +34,7 @@
                     <div class="sidebar-footer p-3 mt-auto border-top border-secondary">
                         <div class="d-flex align-items-center">
                             <div class="small text-white">
-                                <span> © Pitaara  Books 2025 | Made with
+                                <span> &copy Pitaara  Books 2025 | Made with
  Do IT Infosystems</span><br>
                               
                             </div>

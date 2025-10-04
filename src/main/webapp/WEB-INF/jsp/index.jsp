@@ -330,7 +330,7 @@ nav-item">
 											<!-- Work Sample 2 -->
 											<div class="carousel-item">
 												<div class="border rounded overflow-hidden">
-													<img src="images/<%=photo%>"
+													<img src="<%=photo%>"
 														alt="Rahul Sharma work sample 2"
 														class="img-fluid fixed-img"
 														style="height: 300px; width: 100%">

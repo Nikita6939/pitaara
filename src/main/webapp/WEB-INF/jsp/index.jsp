@@ -60,7 +60,8 @@
 
 				<!-- <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
+                        <li class="
+nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
@@ -310,7 +311,7 @@
 											<!-- Profile Photo -->
 											<div class="carousel-item active">
 												<div class="border border-purple rounded overflow-hidden">
-													<img src="images/<%=a.getProfilePhoto()%>"
+													<img src="<%=a.getProfilePhoto()%>"
 														alt="Rahul Sharma profile" class="img-fluid fixed-img"
 														style="height: 300px; width: 100%; cursor: pointer"
 														onclick="openImageModal(this)">

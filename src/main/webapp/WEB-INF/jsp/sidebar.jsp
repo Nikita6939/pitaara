@@ -18,7 +18,7 @@
                     <ul class="nav nav-pills flex-column mb-auto">
                        
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-white" data-bs-toggle="tab" data-bs-target="#artists">
+                            <a href="admindashboard" class="nav-link text-white" data-bs-toggle="tab" data-bs-target="#artists">
                                 <i class="bi bi-people me-2"></i>
                                 Dashboard
                             </a>

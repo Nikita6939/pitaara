@@ -88,7 +88,7 @@
 														<td><%=li.getLanguages()%></td>
 														<td>
 															<div class="btn-group">
-																<form action="updateArtist" method="post">
+																<form action="editArtist" method="post">
 																	<button class="btn btn-sm" style="color:#3f2b97;border-color:#3f2b97"
 																		name="id" value="<%=li.getId()%>">
 																		<i class="bi bi-pencil"></i>

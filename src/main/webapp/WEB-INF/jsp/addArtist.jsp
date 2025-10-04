@@ -160,19 +160,7 @@
 											<label for="artistLocation" class="form-label">Location
 												<span class="text-danger">*</span>
 											</label>
-										<select class="form-select text-start" id="artistDropdown" name="fullName">
-    <option value="" disabled selected>Artist Name</option>
-    <%
-        List<Artist> list1 = (List<Artist>) session.getAttribute("show1");
-        if (list1 != null && !list1.isEmpty()) {
-            for (Artist a : list1) {
-    %>
-                <option value="<%= a.getFullName() %>"><%= a.getFullName() %></option>
-    <%
-            }
-        }
-    %>
-</select>
+										
 </div>
 
 										<div class="col-md-6">

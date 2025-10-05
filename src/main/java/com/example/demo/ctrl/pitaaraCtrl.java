@@ -293,5 +293,36 @@ public class pitaaraCtrl {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+     @GetMapping("/export-excel")
+    public void exportToExcel(HttpServletResponse response) throws IOException {
+        List<Artist> artists = (List<Artist>) aR.findAll();
+
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Students");
+
+        Row headerRow = sheet.createRow(0);
+        headerRow.createCell(0).setCellValue("ID");
+        headerRow.createCell(1).setCellValue("Name");
+        headerRow.createCell(2).setCellValue("Email");
+        headerRow.createCell(3).setCellValue("Course");
+
+        int rowIdx = 1;
+        for (Artist artist : artists) {
+            Row row = sheet.createRow(rowIdx++);
+            row.createCell(0).setCellValue(artist.getId());
+//            row.createCell(1).setCellValue(student.getName());
+//            row.createCell(2).setCellValue(student.getEmail());
+//            row.createCell(3).setCellValue(student.getCourse());
+        }
+
+        response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        response.setHeader("Content-Disposition", "attachment; filename=Artist.xlsx");
+
+        ServletOutputStream outputStream = response.getOutputStream();
+        workbook.write(outputStream);
+        workbook.close();
+        outputStream.close();
+    }
+
 
 }

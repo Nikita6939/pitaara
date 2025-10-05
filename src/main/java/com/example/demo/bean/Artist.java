@@ -22,6 +22,7 @@ public class Artist {
 	private String location;
 	private String languages;
 	private String email;
+	private String reference;
 	public String getPermiumMember() {
 		return permiumMember;
 	}
@@ -154,6 +155,13 @@ public class Artist {
 	}
 	public void setYtLink(String ytLink) {
 		this.ytLink = ytLink;
+	}
+
+	public String getReference() {
+		return reference;
+	}
+	public void setreference(String reference) {
+		this.reference = ytLink;
 	}
 	
 	

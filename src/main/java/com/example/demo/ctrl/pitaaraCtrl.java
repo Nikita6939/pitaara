@@ -120,6 +120,14 @@ public class pitaaraCtrl {
     }
 
     // ======== UPDATE ARTIST ========
+     
+    @GetMapping("/editArtist")
+    public String addArtist(Artist a,HttpSession session) {
+    	Optional<Artist> optional = aR.findById(a.getId());
+    	a=optional.get();
+    	session.setAttribute("editForm", a);
+        return "editArtist";
+    }
     @PostMapping("/updateArtist")
     public String updateArtist(
             Artist a,

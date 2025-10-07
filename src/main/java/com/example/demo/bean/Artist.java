@@ -22,7 +22,7 @@ public class Artist {
 	private String location;
 	private String languages;
 	private String email;
-	private String reference;
+	private String reference; 
 	public String getPermiumMember() {
 		return permiumMember;
 	}

@@ -301,34 +301,62 @@ public class pitaaraCtrl {
     }
      @GetMapping("/export-excel")
     public void exportToExcel(HttpServletResponse response) throws IOException {
+        response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        String headerValue = "attachment; filename=artists.xlsx";
+        response.setHeader("Content-Disposition", headerValue);
+
         List<Artist> artists = (List<Artist>) aR.findAll();
 
         Workbook workbook = new XSSFWorkbook();
-        Sheet sheet = workbook.createSheet("Students");
+        Sheet sheet = workbook.createSheet("Artists");
 
+        // Header Row
         Row headerRow = sheet.createRow(0);
-        headerRow.createCell(0).setCellValue("ID");
-        headerRow.createCell(1).setCellValue("Name");
-        headerRow.createCell(2).setCellValue("Email");
-        headerRow.createCell(3).setCellValue("Course");
+        String[] headers = {
+            "ID", "Full Name", "Artist Type", "Age", "Gender",
+            "Experience", "Phone No", "Height", "Weight", "Location",
+            "Languages", "Email", "Biography", "Profile Photo",
+            "More Photo", "Premium Member", "Instagram Link",
+            "Facebook Link", "YouTube Link", "Address"
+        };
 
+        for (int i = 0; i < headers.length; i++) {
+            headerRow.createCell(i).setCellValue(headers[i]);
+        }
+
+        // Data Rows
         int rowIdx = 1;
         for (Artist artist : artists) {
             Row row = sheet.createRow(rowIdx++);
             row.createCell(0).setCellValue(artist.getId());
-//            row.createCell(1).setCellValue(student.getName());
-//            row.createCell(2).setCellValue(student.getEmail());
-//            row.createCell(3).setCellValue(student.getCourse());
+            row.createCell(1).setCellValue(artist.getFullName());
+            row.createCell(2).setCellValue(artist.getArtistType());
+            row.createCell(3).setCellValue(artist.getAge());
+            row.createCell(4).setCellValue(artist.getGender());
+            row.createCell(5).setCellValue(artist.getExperience());
+            row.createCell(6).setCellValue(artist.getPhoneNo());
+            row.createCell(7).setCellValue(artist.getHeight());
+            row.createCell(8).setCellValue(artist.getWeight());
+            row.createCell(9).setCellValue(artist.getLocation());
+            row.createCell(10).setCellValue(artist.getLanguages());
+            row.createCell(11).setCellValue(artist.getEmail());
+            row.createCell(12).setCellValue(artist.getBiography());
+            row.createCell(13).setCellValue(artist.getProfilePhoto());
+            row.createCell(14).setCellValue(artist.getMorePhoto());
+            row.createCell(15).setCellValue(artist.getPermiumMember());
+            row.createCell(16).setCellValue(artist.getInstaLink());
+            row.createCell(17).setCellValue(artist.getFbLink());
+            row.createCell(18).setCellValue(artist.getYtLink());
+            row.createCell(19).setCellValue(artist.getAddress());
         }
 
-        response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-        response.setHeader("Content-Disposition", "attachment; filename=Artist.xlsx");
+        // Auto size columns
+        for (int i = 0; i < headers.length; i++) {
+            sheet.autoSizeColumn(i);
+        }
 
-        ServletOutputStream outputStream = response.getOutputStream();
-        workbook.write(outputStream);
+        workbook.write(response.getOutputStream());
         workbook.close();
-        outputStream.close();
     }
-
 
 }

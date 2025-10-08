@@ -87,7 +87,7 @@
 														<td><%=li.getGender()%></td>
 														<td><%=li.getLocation()%></td>
 														<td><%=li.getLanguages()%></td>
-														<td><%=li.getReference%></td>
+														<td><%=li.getReference()%></td>
 														<td>
 															<div class="btn-group">
 																<form action="editArtist" >

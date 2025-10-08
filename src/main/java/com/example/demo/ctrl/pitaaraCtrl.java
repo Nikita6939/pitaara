@@ -120,7 +120,7 @@ public class pitaaraCtrl {
 
         // Upload gallery photos
         a.setMorePhoto(uploadMultipleToCloudinary(moreFiles));
-
+       Systemout.println(a.geteference());
         aR.save(a);
         return "redirect:admindashboard";
     }

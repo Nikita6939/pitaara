@@ -269,7 +269,7 @@
       container.style.display = 'inline-block';
 
       const img = document.createElement('img');
-      img.src = 'images/' + photo; // adjust path if needed
+      img.src = photo; // adjust path if needed
       img.style.width = '100px';
       img.style.height = '100px';
       img.style.objectFit = 'cover';

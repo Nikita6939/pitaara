@@ -165,13 +165,8 @@
 												<option value="Other">Other</option>
 											</select>
 										</div>
-<div class="row mb-3">
-										<div class="col-md-6">
-											<label for="artistLocation" class="form-label">Location
-												<span class="text-danger">*</span>
-											</label>
+
 										
-</div>
 
 										<div class="col-md-6">
 											<label class="form-label">Languages</label>

@@ -126,6 +126,16 @@
 												<option value="No">No</option>
 												</select>
 										</div>
+										<div class="col-md-4">
+											<label for="permiumMember" class="form-label">Reference <span
+												class="text-danger">*</span></label> <select class="form-select" id="artistLocation"
+												name="reference" required>
+												<option value="" selected disabled>Reference</option>
+												<option value="Admin1">Admin 1</option>
+												<option value="Admin2">Admin 2</option>
+												<option value="Admin3">Admin 3</option>
+												</select>
+										</div>
 									</div>
 									<div class="row mb-3">
 										<div class="col-md-6">

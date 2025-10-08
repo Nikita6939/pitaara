@@ -38,7 +38,7 @@
 					<div class="modal-dialog modal-lg">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title">Add New Artist</h5>
+								<h5 class="modal-title">Update Artist</h5>
 
 							</div>
 							<%Artist a = (Artist)session.getAttribute("editForm");

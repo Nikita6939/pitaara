@@ -51,12 +51,7 @@
 					<img src="images/logo.png" style="height: 150px">
 				</div>
 
-				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarNav"
-					aria-controls="navbarNav" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+				
 
 				<!-- <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
@@ -425,6 +420,7 @@ nav-item">
 						</div>
 					</div>
 				</div>
+</section>
 
 				<!-- Footer -->
 				<footer class="bg-dark text-white pt-2 pb-3">

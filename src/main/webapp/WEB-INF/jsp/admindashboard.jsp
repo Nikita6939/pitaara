@@ -64,6 +64,7 @@
                                                         <th scope="col">Gender</th>
                                                         <th scope="col">Location</th>
                                                         <th scope="col">Languages</th>
+														 <th scope="col">Reference</th>
                                                         <th scope="col">Actions</th>
                                                     </tr>
                                                 </thead>
@@ -86,6 +87,7 @@
 														<td><%=li.getGender()%></td>
 														<td><%=li.getLocation()%></td>
 														<td><%=li.getLanguages()%></td>
+														<td><%=li.getReference%></td>
 														<td>
 															<div class="btn-group">
 																<form action="editArtist" >

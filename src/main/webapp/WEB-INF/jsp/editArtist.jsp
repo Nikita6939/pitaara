@@ -213,7 +213,7 @@
 												Photo <span class="text-danger">*</span>
 											</label> <input class="form-control" type="file"
 												 name="profile">
-												<img src="images/<%=a.getProfilePhoto()%>" style="height:100px;width:100px">
+												<img src="<%=a.getProfilePhoto()%>" style="height:100px;width:100px">
 										</div>
 										</div>
 										<div class="row mb-3">

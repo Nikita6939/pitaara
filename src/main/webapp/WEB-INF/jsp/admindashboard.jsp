@@ -114,12 +114,7 @@
                                         <!-- Pagination -->
                                        
                                     </div>
-                                     <div class="card-header bg-white d-flex justify-content-between align-items-center" style="float: right;">
-                                      
-                                        <a href="export-excel" class="btn btn-purple" >
-                                            <i class="bi bi-plus-circle me-2"></i>Export Into Excel
-                                        </a>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>

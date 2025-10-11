@@ -114,7 +114,12 @@
                                         <!-- Pagination -->
                                        
                                     </div>
-                                   
+                                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                                        <h5 class="mb-0">Manage Artists</h5>
+                                        <a href="export-excel" class="btn btn-purple" >
+                                            <i class="bi bi-plus-circle me-2"></i>Export into PDF
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -111,7 +111,7 @@ public class pitaaraCtrl {
     }
 
     @PostMapping("/saveArtist")
-    public String saveArtist(Artist a,
+    public String saveArtist(Artist a,String reference,
                              @RequestParam("profile") MultipartFile profileFile,
                              @RequestParam("profile1") MultipartFile[] moreFiles) throws IOException {
 
@@ -120,6 +120,7 @@ public class pitaaraCtrl {
 
         // Upload gallery photos
         a.setMorePhoto(uploadMultipleToCloudinary(moreFiles));
+        System.out.println(reference);
        System.out.println(a.getReference());
         aR.save(a);
         return "redirect:admindashboard";

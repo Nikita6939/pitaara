@@ -302,8 +302,9 @@ public class pitaaraCtrl {
     }
     @GetMapping("/export-excel")
 public void exportToExcel(HttpServletResponse response) throws IOException {
-    response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-    response.setHeader("Content-Disposition", "attachment; filename=artists.xlsx");
+    System.out.println("data");
+    // response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+    // response.setHeader("Content-Disposition", "attachment; filename=artists.xlsx");
 
     try (Workbook workbook = new XSSFWorkbook()) {
         Sheet sheet = workbook.createSheet("Artists");
@@ -350,7 +351,7 @@ public void exportToExcel(HttpServletResponse response) throws IOException {
             row.createCell(19).setCellValue(safeString(artist.getAddress()));
         }
 
-        // Auto size
+       
         for (int i = 0; i < headers.length; i++) sheet.autoSizeColumn(i);
 
         workbook.write(response.getOutputStream());

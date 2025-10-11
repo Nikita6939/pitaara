@@ -127,7 +127,7 @@
 												</select>
 										</div>
 										<div class="col-md-4">
-											<label for="permiumMember" class="form-label">Reference <span
+											<label for="reference" class="form-label">Reference <span
 												class="text-danger">*</span></label> <select class="form-select" id="artistLocation"
 												name="reference" required>
 												<option value="" selected disabled>Reference</option>

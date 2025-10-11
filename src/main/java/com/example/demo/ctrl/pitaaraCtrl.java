@@ -303,8 +303,7 @@ public class pitaaraCtrl {
     @GetMapping("/export-excel")
 public void exportToExcel(HttpServletResponse response) throws IOException {
     System.out.println("data");
-    // response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-    // response.setHeader("Content-Disposition", "attachment; filename=artists.xlsx");
+    
 
     try (Workbook workbook = new XSSFWorkbook()) {
         Sheet sheet = workbook.createSheet("Artists");
@@ -351,10 +350,12 @@ public void exportToExcel(HttpServletResponse response) throws IOException {
             row.createCell(19).setCellValue(safeString(artist.getAddress()));
         }
 
-       
-        for (int i = 0; i < headers.length; i++) sheet.autoSizeColumn(i);
-
-        workbook.write(response.getOutputStream());
+        response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        response.setHeader("Content-Disposition", "attachment; filename=artists.xlsx");
+      ServletOutputStream outputStream = response.getOutputStream();
+        workbook.write(outputStream);
+        workbook.close();
+        outputStream.close();
     } catch (Exception e) {
         e.printStackTrace(); // Log to Railway logs
         response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error exporting Excel: " + e.getMessage());

@@ -301,7 +301,7 @@ public class pitaaraCtrl {
         }
     }
     @GetMapping("/export-excel")
-public void exportToExcel(HttpServletResponse response) throws IOException {
+public String exportToExcel(HttpServletResponse response) throws IOException {
     System.out.println("data");
     
 
@@ -365,6 +365,6 @@ public void exportToExcel(HttpServletResponse response) throws IOException {
 private String safeString(Object obj) {
     return obj == null ? "" : obj.toString();
 }
-
+ return "redirect:admindashboard";
 
 }

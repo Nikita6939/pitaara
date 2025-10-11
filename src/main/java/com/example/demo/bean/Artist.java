@@ -160,8 +160,8 @@ public class Artist {
 	public String getReference() {
 		return reference;
 	}
-	public void setreference(String reference) {
-		this.reference = ytLink;
+	public void setReference(String reference) {
+		this.reference =reference ;
 	}
 	
 	

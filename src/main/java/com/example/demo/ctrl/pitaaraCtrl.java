@@ -300,19 +300,17 @@ public class pitaaraCtrl {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-     @GetMapping("/export-excel")
-    public void exportToExcel(HttpServletResponse response) throws IOException {
-        response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-        String headerValue = "attachment; filename=artists.xlsx";
-        response.setHeader("Content-Disposition", headerValue);
+    @GetMapping("/export-excel")
+public void exportToExcel(HttpServletResponse response) throws IOException {
+    response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+    response.setHeader("Content-Disposition", "attachment; filename=artists.xlsx");
+
+    try (Workbook workbook = new XSSFWorkbook()) {
+        Sheet sheet = workbook.createSheet("Artists");
 
         List<Artist> artists = (List<Artist>) aR.findAll();
 
-        Workbook workbook = new XSSFWorkbook();
-        Sheet sheet = workbook.createSheet("Artists");
-
         // Header Row
-        Row headerRow = sheet.createRow(0);
         String[] headers = {
             "ID", "Full Name", "Artist Type", "Age", "Gender",
             "Experience", "Phone No", "Height", "Weight", "Location",
@@ -321,6 +319,7 @@ public class pitaaraCtrl {
             "Facebook Link", "YouTube Link", "Address"
         };
 
+        Row headerRow = sheet.createRow(0);
         for (int i = 0; i < headers.length; i++) {
             headerRow.createCell(i).setCellValue(headers[i]);
         }
@@ -329,35 +328,41 @@ public class pitaaraCtrl {
         int rowIdx = 1;
         for (Artist artist : artists) {
             Row row = sheet.createRow(rowIdx++);
-            row.createCell(0).setCellValue(artist.getId());
-            row.createCell(1).setCellValue(artist.getFullName());
-            row.createCell(2).setCellValue(artist.getArtistType());
-            row.createCell(3).setCellValue(artist.getAge());
-            row.createCell(4).setCellValue(artist.getGender());
-            row.createCell(5).setCellValue(artist.getExperience());
-            row.createCell(6).setCellValue(artist.getPhoneNo());
-            row.createCell(7).setCellValue(artist.getHeight());
-            row.createCell(8).setCellValue(artist.getWeight());
-            row.createCell(9).setCellValue(artist.getLocation());
-            row.createCell(10).setCellValue(artist.getLanguages());
-            row.createCell(11).setCellValue(artist.getEmail());
-            row.createCell(12).setCellValue(artist.getBiography());
-            row.createCell(13).setCellValue(artist.getProfilePhoto());
-            row.createCell(14).setCellValue(artist.getMorePhoto());
-            row.createCell(15).setCellValue(artist.getPermiumMember());
-            row.createCell(16).setCellValue(artist.getInstaLink());
-            row.createCell(17).setCellValue(artist.getFbLink());
-            row.createCell(18).setCellValue(artist.getYtLink());
-            row.createCell(19).setCellValue(artist.getAddress());
+            row.createCell(0).setCellValue(safeString(artist.getId()));
+            row.createCell(1).setCellValue(safeString(artist.getFullName()));
+            row.createCell(2).setCellValue(safeString(artist.getArtistType()));
+            row.createCell(3).setCellValue(safeString(artist.getAge()));
+            row.createCell(4).setCellValue(safeString(artist.getGender()));
+            row.createCell(5).setCellValue(safeString(artist.getExperience()));
+            row.createCell(6).setCellValue(safeString(artist.getPhoneNo()));
+            row.createCell(7).setCellValue(safeString(artist.getHeight()));
+            row.createCell(8).setCellValue(safeString(artist.getWeight()));
+            row.createCell(9).setCellValue(safeString(artist.getLocation()));
+            row.createCell(10).setCellValue(safeString(artist.getLanguages()));
+            row.createCell(11).setCellValue(safeString(artist.getEmail()));
+            row.createCell(12).setCellValue(safeString(artist.getBiography()));
+            row.createCell(13).setCellValue(safeString(artist.getProfilePhoto()));
+            row.createCell(14).setCellValue(safeString(artist.getMorePhoto()));
+            row.createCell(15).setCellValue(safeString(artist.getPermiumMember()));
+            row.createCell(16).setCellValue(safeString(artist.getInstaLink()));
+            row.createCell(17).setCellValue(safeString(artist.getFbLink()));
+            row.createCell(18).setCellValue(safeString(artist.getYtLink()));
+            row.createCell(19).setCellValue(safeString(artist.getAddress()));
         }
 
-        // Auto size columns
-        for (int i = 0; i < headers.length; i++) {
-            sheet.autoSizeColumn(i);
-        }
+        // Auto size
+        for (int i = 0; i < headers.length; i++) sheet.autoSizeColumn(i);
 
         workbook.write(response.getOutputStream());
-        workbook.close();
+    } catch (Exception e) {
+        e.printStackTrace(); // Log to Railway logs
+        response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error exporting Excel: " + e.getMessage());
     }
+}
+
+private String safeString(Object obj) {
+    return obj == null ? "" : obj.toString();
+}
+
 
 }

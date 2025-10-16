@@ -360,11 +360,12 @@ public String exportToExcel(HttpServletResponse response) throws IOException {
         e.printStackTrace(); // Log to Railway logs
         response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error exporting Excel: " + e.getMessage());
     }
+     return "redirect:admindashboard";
 }
 
 private String safeString(Object obj) {
     return obj == null ? "" : obj.toString();
 }
- return "redirect:admindashboard";
+
 
 }
